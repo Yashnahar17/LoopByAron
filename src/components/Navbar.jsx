@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Menu, X, BookOpen } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 
 const trilogyItems = [
   { label: 'Part I: The Loop',          page: 'part-one' },
@@ -64,7 +64,6 @@ export default function Navbar({ currentPage, onNavigate }) {
       <nav aria-label="Primary" className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 h-[70px] flex items-center justify-between gap-4">
         {/* Logo */}
         <button onClick={() => go('home')} className="flex min-w-0 items-center gap-2 group rounded-lg px-1 py-2 text-left">
-          <BookOpen size={22} className="shrink-0 text-teal-600" />
           <span className="truncate font-bold text-base text-teal-600 transition-colors group-hover:text-teal-700 sm:text-lg">The Loop Trilogy</span>
         </button>
 
