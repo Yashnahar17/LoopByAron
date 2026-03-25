@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #ffffff;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+  img, picture, video, canvas, svg { display: block; max-width: 100%; }
+  input, textarea, select, button { font: inherit; }
+  a, button, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+  :focus-visible {
+    outline: 3px solid rgba(13, 148, 136, 0.35);
+    outline-offset: 3px;
+  }
+  ::selection { background: rgba(13,148,136,0.2); }
+}
+
+@layer components {
+  .section-shell {
+    @apply w-full max-w-[92rem] mx-auto px-4 sm:px-5 lg:px-6;
+  }
+  .section-shell-wide {
+    @apply w-full max-w-[98rem] mx-auto px-4 sm:px-5 lg:px-6;
+  }
+  .section-shell-narrow {
+    @apply w-full max-w-[84rem] mx-auto px-4 sm:px-5 lg:px-6;
+  }
+  .section-space {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700
+           text-white font-semibold rounded-lg transition-all duration-200 cursor-pointer select-none min-h-11;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-600
+           text-white font-semibold rounded-lg transition-all duration-200 cursor-pointer select-none min-h-11;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-teal-600
+           text-teal-600 hover:bg-teal-600 hover:text-white font-semibold rounded-lg
+           transition-all duration-200 cursor-pointer select-none min-h-11;
+  }
+  .card { @apply bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden; }
+  .input-base {
+    @apply w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-800
+           placeholder-gray-400 text-sm focus:outline-none focus:ring-2
+           focus:ring-teal-500 focus:border-transparent transition-all duration-200 bg-white min-h-11;
+  }
+  .section-title { @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight text-balance; }
+  .section-sub   { @apply text-gray-500 text-base md:text-lg mt-3 leading-7 text-balance; }
+  .badge         { @apply inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-teal-100 text-teal-700; }
+}
