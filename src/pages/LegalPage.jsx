@@ -25,7 +25,6 @@ const legalContent = {
               'Email address',
               'Phone number, if submitted through contact forms',
               'Country and other form details you choose to provide',
-              'Payment, billing, or shipping details if secure purchasing features are added or enabled through this website',
             ],
           },
           {
