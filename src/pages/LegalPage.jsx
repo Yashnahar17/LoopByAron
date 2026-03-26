@@ -146,7 +146,7 @@ const legalContent = {
       {
         title: '12. Contact Information',
         body: [
-          'For privacy-related questions or requests, please contact us at privacy@looptrilogy.com or through the website contact page.',
+          'For privacy-related questions or requests, please contact us at contactus@loopbyaron.com or through the website contact page.',
           'Business mailing address details can be added here if and when a public business address is made available for this website.',
         ],
       },
@@ -356,7 +356,7 @@ const legalContent = {
       {
         title: '17. Contact Information',
         body: [
-          'For questions about these Terms, please contact support@looptrilogy.com or use the website contact page.',
+          'For questions about these Terms, please contact contactus@loopbyaron.com or use the website contact page.',
           'Business mailing address details can be added here if and when a public business address is made available for this website.',
         ],
       },

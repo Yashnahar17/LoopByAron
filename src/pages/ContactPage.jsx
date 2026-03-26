@@ -60,7 +60,7 @@ export default function ContactPage({ onNavigate }) {
       `Hello,\n\nI would like to make a media / press enquiry regarding The Loop Trilogy.\n\nMy email: ${mediaEmail}\nPublication / Platform:\nDeadline:\nPreferred format:\nRequest details:\n\nThank you.`
     )
 
-    window.location.href = `mailto:contact@looptrilogy.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:contactus@loopbyaron.com?subject=${subject}&body=${body}`
   }
 
   return (
@@ -85,7 +85,7 @@ export default function ContactPage({ onNavigate }) {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 text-base mb-1">Email</h3>
-                    <p className="text-gray-500 text-sm">contact@looptrilogy.com</p>
+                    <a href="mailto:contactus@loopbyaron.com" className="text-gray-500 text-sm transition-colors hover:text-teal-600">contactus@loopbyaron.com</a>
                   </div>
                 </div>
               </FadeIn>

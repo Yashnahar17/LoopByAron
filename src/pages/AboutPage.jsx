@@ -15,7 +15,7 @@ const connectLinks = [
   { Icon: Facebook, label: 'Facebook' },
   { Icon: AtSign, label: 'Threads' },
   { Icon: Instagram, label: 'Instagram' },
-  { Icon: Mail, label: 'Email' },
+  { Icon: Mail, label: 'author@loopbyaron.com', href: 'mailto:author@loopbyaron.com' },
 ]
 
 export default function AboutPage({ onNavigate }) {
@@ -77,22 +77,36 @@ export default function AboutPage({ onNavigate }) {
                 <div className="mt-7 pt-6 border-t border-gray-100">
                   <h3 className="text-lg font-bold text-teal-600 mb-3">Connect</h3>
                   <div className="flex flex-wrap gap-2.5">
-                    {connectLinks.map(({ Icon, label }, i) => (
-                      <motion.button
-                        key={label}
-                        type="button"
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.08 }}
-                        className="inline-flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm font-medium text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 hover:shadow-md"
-                      >
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
-                          <Icon size={16} />
-                        </span>
-                        {label}
-                      </motion.button>
-                    ))}
+                    {connectLinks.map(({ Icon, label, href }, i) => {
+                      const sharedProps = {
+                        key: label,
+                        initial: { opacity: 0, y: 10 },
+                        whileInView: { opacity: 1, y: 0 },
+                        viewport: { once: true },
+                        transition: { delay: i * 0.08 },
+                        className: 'inline-flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm font-medium text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 hover:shadow-md',
+                      }
+
+                      if (href) {
+                        return (
+                          <motion.a {...sharedProps} href={href}>
+                            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                              <Icon size={16} />
+                            </span>
+                            {label}
+                          </motion.a>
+                        )
+                      }
+
+                      return (
+                        <motion.button {...sharedProps} type="button">
+                          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                            <Icon size={16} />
+                          </span>
+                          {label}
+                        </motion.button>
+                      )
+                    })}
                   </div>
                 </div>
               </div>

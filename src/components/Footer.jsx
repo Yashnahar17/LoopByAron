@@ -2,7 +2,7 @@ import { BookOpen, Mail } from 'lucide-react'
 
 const quickLinks   = [{ label: 'Home', page: 'home' }, { label: 'About Author', page: 'about' }, { label: 'Contact Us', page: 'contact' }]
 const trilogyLinks = [{ label: 'Part I: The Loop', page: 'part-one' }, { label: 'Part II: Within The Loop', page: 'part-two' }, { label: 'Part III: Beyond The Loop', page: 'part-three' }]
-const socials      = [{ Icon: Mail, label: 'Email' }]
+const socials      = [{ Icon: Mail, label: 'Email', href: 'mailto:contactus@loopbyaron.com' }]
 
 export default function Footer({ onNavigate }) {
   const go = (page) => { onNavigate(page); window.scrollTo({ top: 0, behavior: 'smooth' }) }
@@ -31,10 +31,10 @@ export default function Footer({ onNavigate }) {
           </div>
           <div>
             <h4 className="font-semibold text-teal-500 text-sm tracking-wider uppercase mb-5">Connect</h4>
-            <div className="flex gap-3">{socials.map(({ Icon, label }) => (
-              <button key={label} aria-label={label} className="w-10 h-10 rounded-xl bg-gray-800 hover:bg-teal-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200 hover:scale-110">
+            <div className="flex gap-3">{socials.map(({ Icon, label, href }) => (
+              <a key={label} href={href} aria-label={label} className="w-10 h-10 rounded-xl bg-gray-800 hover:bg-teal-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200 hover:scale-110">
                 <Icon size={16} />
-              </button>
+              </a>
             ))}</div>
           </div>
         </div>
