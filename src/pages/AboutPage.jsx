@@ -15,7 +15,7 @@ const connectLinks = [
   { Icon: Facebook, label: 'Facebook' },
   { Icon: AtSign, label: 'Threads' },
   { Icon: Instagram, label: 'Instagram' },
-  { Icon: Mail, label: 'author@loopbyaron.com', href: 'mailto:author@loopbyaron.com' },
+  { Icon: Mail, label: 'Email', href: 'mailto:author@loopbyaron.com' },
 ]
 
 export default function AboutPage({ onNavigate }) {
