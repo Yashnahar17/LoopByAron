@@ -1,4 +1,4 @@
-import { BookOpen, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 const quickLinks   = [{ label: 'Home', page: 'home' }, { label: 'About Author', page: 'about' }, { label: 'Contact Us', page: 'contact' }]
 const trilogyLinks = [{ label: 'Part I: The Loop', page: 'part-one' }, { label: 'Part II: Within The Loop', page: 'part-two' }, { label: 'Part III: Beyond The Loop', page: 'part-three' }]
@@ -12,7 +12,6 @@ export default function Footer({ onNavigate }) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <button onClick={() => go('home')} className="flex items-center gap-2 mb-4 group">
-              <BookOpen size={20} className="text-teal-500" />
               <span className="font-bold text-white text-base group-hover:text-teal-400 transition-colors">The Loop Trilogy</span>
             </button>
             <p className="text-sm leading-relaxed">The untold reality behind fictional characters</p>

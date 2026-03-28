@@ -97,7 +97,7 @@ export default function ContactPage({ onNavigate }) {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 text-base mb-1">Location</h3>
-                    <p className="text-gray-500 text-sm">New York, NY</p>
+                    <p className="text-gray-500 text-sm">Pune, India</p>
                   </div>
                 </div>
               </FadeIn>
