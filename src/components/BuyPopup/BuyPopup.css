@@ -1,0 +1,329 @@
+/* Buy Popup Styles - Teal/Dark Theme */
+
+/* Main Buy Button */
+.main-buy-btn {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.main-buy-btn:hover {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+
+.main-buy-btn:active {
+  transform: translateY(0);
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Popup Container */
+.popup-container {
+  background: #1e293b;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.4s ease;
+  border: 1px solid #334155;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Popup Header */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid #334155;
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.popup-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Buy Table */
+.buy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.buy-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.buy-table th {
+  background: #0f172a;
+  color: #14b8a6;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 2px solid #0d9488;
+}
+
+.buy-table th:first-child {
+  text-align: left;
+}
+
+.buy-table td {
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid #334155;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.buy-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.buy-table tbody tr:hover {
+  background: #252f47;
+}
+
+.buy-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.platform-name {
+  text-align: left !important;
+  font-weight: 500;
+  color: #f1f5f9 !important;
+}
+
+/* Dash for unavailable */
+.dash {
+  color: #64748b;
+  font-size: 1.2rem;
+}
+
+/* Buy Button in Table */
+.buy-btn {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.buy-btn:active {
+  transform: scale(0.98);
+}
+
+.buy-btn.global-listing {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  max-width: 200px;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+/* Badge for Add-On */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.badge.addon {
+  background: #475569;
+  color: #94a3b8;
+  border: 1px solid #64748b;
+}
+
+/* Popup Footer */
+.popup-footer {
+  padding: 20px 28px;
+  border-top: 1px solid #334155;
+  background: #0f172a;
+  border-radius: 0 0 16px 16px;
+}
+
+.legend {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .popup-container {
+    max-width: 100%;
+    max-height: 95vh;
+  }
+
+  .popup-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .buy-table th,
+  .buy-table td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+
+  .buy-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .badge {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  .platform-name {
+    max-width: 120px;
+    word-wrap: break-word;
+  }
+
+  .buy-btn.global-listing {
+    font-size: 0.65rem;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-header {
+    padding: 18px 20px;
+  }
+
+  .popup-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .buy-table {
+    min-width: 500px;
+  }
+}
