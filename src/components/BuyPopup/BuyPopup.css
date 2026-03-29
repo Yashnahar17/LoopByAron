@@ -41,11 +41,18 @@
   z-index: 1000;
   padding: 1rem;
   animation: buyPopupFadeIn 0.3s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 @keyframes buyPopupFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Mobile Handle (swipe indicator) */
+.buy-popup-handle {
+  display: none;
 }
 
 /* Popup Container */
@@ -265,46 +272,216 @@
   gap: 0.5rem;
 }
 
-/* Responsive Design */
+/* Tablet Responsive Design */
 @media (max-width: 768px) {
   .popup-container {
-    max-width: 100%;
-    max-height: 95vh;
-    margin: 0.5rem;
+    max-width: 95%;
+    max-height: 90vh;
+    margin: 0.75rem;
+    border-radius: 0.75rem;
+  }
+
+  .popup-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .popup-header h2 {
+    font-size: 1rem;
+    max-width: 85%;
+  }
+
+  .close-btn {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 1.25rem;
+  }
+
+  .buy-table th,
+  .buy-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .buy-popup-btn-small {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .buy-popup-badge {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .buy-popup-platform-name {
+    max-width: 120px;
+    word-wrap: break-word;
+    font-size: 0.8rem;
+  }
+
+  .buy-popup-footer {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .buy-popup-legend {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile - Card Layout */
+@media (max-width: 640px) {
+  .popup-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .popup-container {
+    max-height: 90vh;
+    margin: 0;
+    border-radius: 1.25rem 1.25rem 0 0;
+    animation: buyPopupSlideUpMobile 0.3s ease;
+  }
+
+  /* Mobile Handle */
+  .buy-popup-handle {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: #d1d5db;
+    border-radius: 2px;
+    margin: 0.75rem auto 0.5rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes buyPopupSlideUpMobile {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .popup-header {
+    padding: 1rem;
   }
 
   .popup-header h2 {
     font-size: 1rem;
   }
 
-  .buy-table th,
+  /* Convert table to card layout */
+  .buy-table {
+    display: block;
+  }
+
+  .buy-table thead {
+    display: none;
+  }
+
+  .buy-table tbody {
+    display: block;
+  }
+
+  .buy-table tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: #f9fafb;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+  }
+
+  .buy-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
   .buy-table td {
-    padding: 0.75rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: right;
+  }
+
+  .buy-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Add labels for mobile */
+  .buy-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #374151;
     font-size: 0.8rem;
-  }
-
-  .buy-popup-btn-small {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.7rem;
-  }
-
-  .buy-popup-badge {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.65rem;
+    text-align: left;
   }
 
   .buy-popup-platform-name {
-    max-width: 100px;
-    word-wrap: break-word;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f766e;
+    justify-content: center !important;
+    text-align: center !important;
+    border-bottom: 2px solid #14b8a6 !important;
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .buy-popup-platform-name::before {
+    display: none;
+  }
+
+  .buy-popup-dash {
+    font-size: 1rem;
+    color: #d1d5db;
+  }
+
+  .buy-popup-btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .buy-popup-badge {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .buy-popup-footer {
+    padding: 0.875rem 1rem;
+  }
+
+  .buy-popup-legend-item {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 }
 
-@media (max-width: 480px) {
-  .table-wrapper {
-    overflow-x: auto;
+/* Small Mobile */
+@media (max-width: 380px) {
+  .popup-header h2 {
+    font-size: 0.9rem;
   }
 
-  .buy-table {
-    min-width: 500px;
+  .buy-table td {
+    font-size: 0.8rem;
+  }
+
+  .buy-table td::before {
+    font-size: 0.75rem;
+  }
+
+  .buy-popup-platform-name {
+    font-size: 0.9rem;
+  }
+
+  .buy-popup-btn-small {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
   }
 }

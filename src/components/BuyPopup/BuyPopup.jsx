@@ -177,6 +177,8 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy', className = '', buttonText =
       {isOpen && (
         <div className="popup-overlay" onClick={closePopup}>
           <div className="popup-container" onClick={(e) => e.stopPropagation()}>
+            {/* Mobile Handle */}
+            <div className="buy-popup-handle"></div>
             {/* Header */}
             <div className="popup-header">
               <h2>Buy "{bookTitle}"</h2>
@@ -200,9 +202,9 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy', className = '', buttonText =
                   {platforms.map((platform, index) => (
                     <tr key={index}>
                       <td className="buy-popup-platform-name">{platform.name}</td>
-                      <td>{renderCell(platform.audiobook, platform.links?.audiobook)}</td>
-                      <td>{renderCell(platform.ebook, platform.links?.ebook)}</td>
-                      <td>{renderCell(platform.hardcopy, platform.links?.hardcopy)}</td>
+                      <td data-label="Audiobook">{renderCell(platform.audiobook, platform.links?.audiobook)}</td>
+                      <td data-label="E-Book">{renderCell(platform.ebook, platform.links?.ebook)}</td>
+                      <td data-label="Hardcopy">{renderCell(platform.hardcopy, platform.links?.hardcopy)}</td>
                     </tr>
                   ))}
                 </tbody>
