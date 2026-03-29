@@ -7,6 +7,7 @@ import ImageCarousel from '../components/ImageCarousel'
 import ReviewForm from '../components/ReviewForm'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import BuyPopup from '../components/BuyPopup/BuyPopup'
 import { books, getBookBySlug } from '../data/content'
 
 // ─── AUTHOR EXPERIENCE (Part I only) ─────────────────────────────────────────
@@ -187,9 +188,7 @@ function ExploreOtherParts({ currentBook, onNavigate }) {
                       >
                         Read More <ArrowRight size={14} />
                       </button>
-                      <button className="flex-1 btn-secondary text-sm py-2.5">
-                        <ShoppingCart size={14} /> Buy Now
-                      </button>
+                      <BuyPopup bookTitle={book.title} className="flex-1 btn-secondary text-sm py-2.5" />
                     </>
                   ) : (
                     <button
@@ -245,9 +244,9 @@ export default function BookPage({ slug, onNavigate }) {
                         <p key={i}>{para}</p>
                       ))}
                     </div>
-                    <button className="w-full btn-primary py-4 text-base rounded-xl hover:-translate-y-0.5 hover:shadow-lg transition-all">
-                      <ShoppingCart size={18} /> Buy Now
-                    </button>
+                    <div className="w-full">
+                      <BuyPopup bookTitle={book.title} className="w-full btn-primary py-4 text-base rounded-xl hover:-translate-y-0.5 hover:shadow-lg transition-all" />
+                    </div>
                   </>
                 )}
 

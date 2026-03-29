@@ -5,6 +5,7 @@ import FadeIn from '../components/FadeIn'
 import StarRating from '../components/StarRating'
 import ReviewForm from '../components/ReviewForm'
 import Newsletter from '../components/Newsletter'
+import BuyPopup from '../components/BuyPopup/BuyPopup'
 import { books, expertReviewSlides, reviewSummary } from '../data/content'
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
@@ -156,9 +157,7 @@ function BookCard({ book, index, onNavigate }) {
               >
                 Read More <ArrowRight size={14} />
               </button>
-              <button className="flex-1 btn-secondary text-sm px-4 py-2.5">
-                <ShoppingCart size={14} /> Buy Now
-              </button>
+              <BuyPopup bookTitle="The Loop: Part One" className="flex-1 btn-secondary text-sm px-4 py-2.5" />
             </>
           ) : (
             /* Books 2 & 3: only Get Updates button, redirects to contact */

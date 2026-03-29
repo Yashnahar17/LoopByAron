@@ -113,7 +113,7 @@ const platforms = [
   }
 ];
 
-const BuyPopup = ({ bookTitle = 'The Loop Trilogy' }) => {
+const BuyPopup = ({ bookTitle = 'The Loop Trilogy', className = '', buttonText = 'Buy Now', showIcon = true }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openPopup = () => setIsOpen(true);
@@ -127,13 +127,13 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy' }) => {
 
   const renderCell = (value, link) => {
     if (!value) {
-      return <span className="dash">—</span>;
+      return <span className="buy-popup-dash">—</span>;
     }
 
     if (value === 'Buy') {
       return (
         <button
-          className="buy-btn"
+          className="buy-popup-btn-small"
           onClick={() => handleBuyClick(link)}
         >
           Buy
@@ -142,13 +142,13 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy' }) => {
     }
 
     if (value === 'Add-On') {
-      return <span className="badge addon">Add-On</span>;
+      return <span className="buy-popup-badge">Add-On</span>;
     }
 
     // For special cases like "Global E-Book Listing"
     return (
       <button
-        className="buy-btn global-listing"
+        className="buy-popup-btn-small buy-popup-global"
         onClick={() => handleBuyClick(link)}
       >
         {value}
@@ -159,8 +159,18 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy' }) => {
   return (
     <>
       {/* Main Buy Button */}
-      <button className="main-buy-btn" onClick={openPopup}>
-        Buy Now
+      <button
+        className={`buy-popup-trigger ${className}`}
+        onClick={openPopup}
+      >
+        {showIcon && (
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        )}
+        {buttonText}
       </button>
 
       {/* Popup Overlay */}
@@ -189,7 +199,7 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy' }) => {
                 <tbody>
                   {platforms.map((platform, index) => (
                     <tr key={index}>
-                      <td className="platform-name">{platform.name}</td>
+                      <td className="buy-popup-platform-name">{platform.name}</td>
                       <td>{renderCell(platform.audiobook, platform.links?.audiobook)}</td>
                       <td>{renderCell(platform.ebook, platform.links?.ebook)}</td>
                       <td>{renderCell(platform.hardcopy, platform.links?.hardcopy)}</td>
@@ -200,10 +210,10 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy' }) => {
             </div>
 
             {/* Footer */}
-            <div className="popup-footer">
-              <p className="legend">
-                <span className="legend-item">
-                  <span className="badge addon">Add-On</span> = Requires subscription
+            <div className="buy-popup-footer">
+              <p className="buy-popup-legend">
+                <span className="buy-popup-legend-item">
+                  <span className="buy-popup-badge">Add-On</span> = Requires subscription
                 </span>
               </p>
             </div>
