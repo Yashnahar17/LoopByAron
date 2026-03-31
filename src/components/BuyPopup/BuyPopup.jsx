@@ -16,8 +16,8 @@ const platforms = [
   {
     name: 'Amazon Prime & Global',
     audiobook: null,
-    ebook: 'Add-On',
-    hardcopy: 'Add-On',
+    ebook: null,
+    hardcopy: null,
     links: {}
   },
   {
@@ -86,7 +86,7 @@ const platforms = [
   },
   {
     name: 'Spotify',
-    audiobook: 'Add-On',
+    audiobook: null,
     ebook: 'Buy',
     hardcopy: null,
     links: {
@@ -95,7 +95,7 @@ const platforms = [
   },
   {
     name: 'Amazon Music',
-    audiobook: 'Add-On',
+    audiobook: null,
     ebook: 'Buy',
     hardcopy: null,
     links: {
@@ -104,7 +104,7 @@ const platforms = [
   },
   {
     name: 'Apple Music',
-    audiobook: 'Add-On',
+    audiobook: null,
     ebook: 'Buy',
     hardcopy: null,
     links: {
@@ -211,14 +211,6 @@ const BuyPopup = ({ bookTitle = 'The Loop Trilogy', className = '', buttonText =
               </table>
             </div>
 
-            {/* Footer */}
-            <div className="buy-popup-footer">
-              <p className="buy-popup-legend">
-                <span className="buy-popup-legend-item">
-                  <span className="buy-popup-badge">Add-On</span> = Requires subscription
-                </span>
-              </p>
-            </div>
           </div>
         </div>
       )}
