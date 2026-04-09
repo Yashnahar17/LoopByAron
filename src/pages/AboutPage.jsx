@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { AtSign, Facebook, Instagram, Mail, Quote } from 'lucide-react'
-import { Aron } from 'src/assets/images/Aron.JPG'
+import AronImg from './assets/images/Aron.JPG';
 import FadeIn from '../components/FadeIn'
 import Footer from '../components/Footer'
 
@@ -31,7 +31,7 @@ export default function AboutPage({ onNavigate }) {
             <FadeIn x={-30} y={0}>
               <div className="rounded-[2rem] overflow-hidden shadow-[0_28px_70px_rgba(15,23,42,0.14)]">
                 <img
-                  src={src/assets/images/Aron.JPG}
+                  src={AronImg}
                   alt="Aron Goves"
                   loading="eager"
                   decoding="async"
