@@ -5,14 +5,16 @@ import FadeIn from '../components/FadeIn'
 import Footer from '../components/Footer'
 
 const credentials = [
-  'CEO & Founder of ShutterBeat Media',
-  'Marketing Specialist & Writer',
+  'Author',
+  'Business and Brand Consultant',
+  'Advertising and Marketing Specialist',
   'Photographer & Filmmaker',
   'VFX Artist & Visual Storyteller',
+  'Founder and CEO of ShutterBeat Media',
 ]
 
 const connectLinks = [
-  { Icon: Facebook, label: 'Facebook' },
+  
   { Icon: AtSign, label: 'Threads' },
   { Icon: Instagram, label: 'Instagram' },
   { Icon: Mail, label: 'Email', href: 'mailto:author@loopbyaron.com' },
