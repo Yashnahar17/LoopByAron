@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { AtSign, Facebook, Instagram, Mail, Quote } from 'lucide-react'
+import { AtSign, Instagram, Mail, Quote } from 'lucide-react'
 import aron from '../assets/images/Aron.JPG'
 import FadeIn from '../components/FadeIn'
 import Footer from '../components/Footer'
@@ -14,9 +14,8 @@ const credentials = [
 ]
 
 const connectLinks = [
-  
-  { Icon: AtSign, label: 'Threads' },
-  { Icon: Instagram, label: 'Instagram' },
+  { Icon: AtSign, label: 'Threads', href: 'https://www.threads.com/@arongoves' },
+  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/arongoves?igsh=MWlkcmRtZjBmdjJxMQ==' },
   { Icon: Mail, label: 'Email', href: 'mailto:author@loopbyaron.com' },
 ]
 
@@ -91,7 +90,7 @@ export default function AboutPage({ onNavigate }) {
 
                       if (href) {
                         return (
-                          <motion.a {...sharedProps} href={href}>
+                          <motion.a {...sharedProps} href={href} target="_blank" rel="noreferrer">
                             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                               <Icon size={16} />
                             </span>
