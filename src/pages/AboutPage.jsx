@@ -13,11 +13,13 @@ const credentials = [
   'Founder and CEO of ShutterBeat Media',
 ]
 
-const connectLinks = [
+
+  const socialLinks = [
   { Icon: AtSign, label: 'Threads', href: 'https://www.threads.com/@arongoves' },
   { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/arongoves?igsh=MWlkcmRtZjBmdjJxMQ==' },
   { Icon: Mail, label: 'Email', href: 'mailto:author@loopbyaron.com' },
 ]
+
 
 export default function AboutPage({ onNavigate }) {
   return (
