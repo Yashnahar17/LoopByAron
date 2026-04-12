@@ -13,13 +13,11 @@ const credentials = [
   'Founder and CEO of ShutterBeat Media',
 ]
 
-
-  const socialLinks = [
+const socialLinks = [
   { Icon: AtSign, label: 'Threads', href: 'https://www.threads.com/@arongoves' },
   { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/arongoves?igsh=MWlkcmRtZjBmdjJxMQ==' },
   { Icon: Mail, label: 'Email', href: 'mailto:author@loopbyaron.com' },
 ]
-
 
 export default function AboutPage({ onNavigate }) {
   return (
@@ -80,7 +78,7 @@ export default function AboutPage({ onNavigate }) {
                 <div className="mt-7 pt-6 border-t border-gray-100">
                   <h3 className="text-lg font-bold text-teal-600 mb-3">Connect</h3>
                   <div className="flex flex-wrap gap-2.5">
-                    {connectLinks.map(({ Icon, label, href }, i) => {
+                    {socialLinks.map(({ Icon, label, href }, i) => {
                       const sharedProps = {
                         key: label,
                         initial: { opacity: 0, y: 10 },
