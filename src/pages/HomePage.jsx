@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronLeft, ChevronRight, Clock, Infinity, ShoppingCart, MessageSquareQuote } from 'lucide-react'
@@ -7,6 +8,7 @@ import ReviewForm from '../components/ReviewForm'
 import Newsletter from '../components/Newsletter'
 import BuyPopup from '../components/BuyPopup/BuyPopup'
 import { books, expertReviewSlides, reviewSummary } from '../data/content'
+import homeBanner from '../assets/images/home-banner.png'
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero({ onNavigate }) {
@@ -14,7 +16,7 @@ function Hero({ onNavigate }) {
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1600&q=80')",
+        backgroundImage: `url(${homeBanner})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -36,7 +38,7 @@ function Hero({ onNavigate }) {
           </div>
         </motion.div>
 
-        {/* Title only — no subtitle text per the update */}
+        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,7 +100,6 @@ function AboutSection() {
           </div>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">The Loop Trilogy</h2>
-            
           </div>
           <div className="max-w-4xl mx-auto space-y-6 text-left text-gray-600 text-base md:text-lg leading-8">
             <p>The untold reality behind fictional characters. The Loop Trilogy is a psychological thriller trilogy consisting of three standalone series, each written to explore the true nature of the human psyche and the extent to which it can unravel when left unrestrained and without boundaries. Corruption in the world, along with addiction to substances, greed, and power, serve as the primary driving forces of the narrative. Through these themes, the evolution of morals and values challenges the traditional distinction between good and evil, revealing both sides in their purest and most authentic forms.</p>
@@ -160,7 +161,6 @@ function BookCard({ book, index, onNavigate }) {
               <BuyPopup bookTitle="The Loop: Part One" className="flex-1 btn-secondary text-sm px-4 py-2.5" />
             </>
           ) : (
-            /* Books 2 & 3: only Get Updates button, redirects to contact */
             <button
               onClick={() => onNavigate('contact')}
               className="w-full btn-primary text-sm px-4 py-2.5"
@@ -224,9 +224,6 @@ export default function HomePage({ onNavigate }) {
           </div>
         </div>
       </section>
-
-      {/* Trilogy sales stats intentionally hidden for now.
-          Re-enable the SalesStats block here when needed. */}
 
       {/* Expert reviews */}
       <section className="section-space bg-gray-50">
