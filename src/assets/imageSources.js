@@ -7,7 +7,7 @@
 // - /Users/yashnahar/loop-trilogy/src/assets/images/beyond-the-loop/cover.jpg
 
 export const authorImages = {
-  primary: 'aron.jpg',
+  primary: '/Users/yashnahar/loop-trilogy/src/assets/images/aron.jpg',
 }
 
 export const bookImages = {
