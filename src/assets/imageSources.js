@@ -1,10 +1,10 @@
 // Replace these URLs with local imports once the real images are added to src/assets.
 // Suggested file layout:
-// - src/assets/author/aron-goves-1.jpg
-// - src/assets/books/the-loop/cover.jpg
-// - src/assets/books/the-loop/carousel-1.jpg
-// - src/assets/books/within-the-loop/cover.jpg
-// - src/assets/books/beyond-the-loop/cover.jpg
+// - /Users/yashnahar/loop-trilogy/src/assets/images/aron.jpg
+// - /Users/yashnahar/loop-trilogy/src/assets/images/the-loop/cover.jpg
+// - /Users/yashnahar/loop-trilogy/src/assets/images/the-loop/carousel-1.jpg
+// - /Users/yashnahar/loop-trilogy/src/assets/images/within-the-loop/cover.jpg
+// - /Users/yashnahar/loop-trilogy/src/assets/images/beyond-the-loop/cover.jpg
 
 export const authorImages = {
   primary: 'aron.jpg',
