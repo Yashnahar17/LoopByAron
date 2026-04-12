@@ -10,45 +10,7 @@ import { books, expertReviewSlides, reviewSummary } from '../data/content'
 import homeBanner from '../assets/images/home-banner.png'
 import homeBannerMobile from '../assets/images/home-page-mobile-banner.png'
 
-// ─── HERO ─────────────────────────────────────────────────────────────────────
-function Hero({ onNavigate }) {
-  return (
-    <>
-      {/* Mobile banner (shown below md) */}
-      <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden md:hidden"
-        style={{
-          backgroundImage: `url(${homeBannerMobile})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(135deg,rgba(10,40,70,0.80) 0%,rgba(13,100,90,0.75) 100%)' }}
-        />
-        <HeroContent onNavigate={onNavigate} />
-      </section>
-
-      {/* Desktop banner (shown at md and above) */}
-      <section
-        className="relative min-h-screen items-center justify-center overflow-hidden hidden md:flex"
-        style={{
-          backgroundImage: `url(${homeBanner})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(135deg,rgba(10,40,70,0.80) 0%,rgba(13,100,90,0.75) 100%)' }}
-        />
-        <HeroContent onNavigate={onNavigate} />
-      </section>
-    </>
-  )
-}
-
+// ─── HERO CONTENT (shared) ────────────────────────────────────────────────────
 function HeroContent({ onNavigate }) {
   return (
     <div className="section-shell-wide relative z-10 py-24 md:py-28 w-full">
@@ -111,6 +73,41 @@ function HeroContent({ onNavigate }) {
         </motion.div>
       </motion.div>
     </div>
+  )
+}
+
+// ─── HERO ─────────────────────────────────────────────────────────────────────
+function Hero({ onNavigate }) {
+  return (
+    <>
+      {/* Mobile (below md) */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:hidden">
+        <img
+          src={homeBannerMobile}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg,rgba(10,40,70,0.80) 0%,rgba(13,100,90,0.75) 100%)' }}
+        />
+        <HeroContent onNavigate={onNavigate} />
+      </section>
+
+      {/* Desktop (md and above) */}
+      <section className="relative min-h-screen hidden md:flex items-center justify-center overflow-hidden">
+        <img
+          src={homeBanner}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg,rgba(10,40,70,0.80) 0%,rgba(13,100,90,0.75) 100%)' }}
+        />
+        <HeroContent onNavigate={onNavigate} />
+      </section>
+    </>
   )
 }
 
