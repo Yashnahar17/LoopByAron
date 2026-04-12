@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronLeft, ChevronRight, Clock, Infinity, ShoppingCart, MessageSquareQuote } from 'lucide-react'
@@ -9,66 +8,92 @@ import Newsletter from '../components/Newsletter'
 import BuyPopup from '../components/BuyPopup/BuyPopup'
 import { books, expertReviewSlides, reviewSummary } from '../data/content'
 import homeBanner from '../assets/images/home-banner.png'
+import homeBannerMobile from '../assets/images/home-page-mobile-banner.png'
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero({ onNavigate }) {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url(${homeBanner})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg,rgba(10,40,70,0.80) 0%,rgba(13,100,90,0.75) 100%)' }}
-      />
-      <div className="section-shell-wide relative z-10 py-24 md:py-28">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center mb-8 md:mb-10"
-        >
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 px-4 py-2 rounded-full text-sm font-medium">
-            <Clock size={14} className="text-teal-300" /> Coming Summer 2026
-          </div>
-        </motion.div>
+    <>
+      {/* Mobile banner (shown below md) */}
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden md:hidden"
+        style={{
+          backgroundImage: `url(${homeBannerMobile})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg,rgba(10,40,70,0.80) 0%,rgba(13,100,90,0.75) 100%)' }}
+        />
+        <HeroContent onNavigate={onNavigate} />
+      </section>
 
-        {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-4xl text-center text-4xl font-extrabold leading-[0.95] tracking-tight text-white mb-10 sm:text-5xl md:text-7xl lg:text-[5.5rem] md:mb-14"
-        >
-          The Loop Trilogy
-        </motion.h1>
+      {/* Desktop banner (shown at md and above) */}
+      <section
+        className="relative min-h-screen items-center justify-center overflow-hidden hidden md:flex"
+        style={{
+          backgroundImage: `url(${homeBanner})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg,rgba(10,40,70,0.80) 0%,rgba(13,100,90,0.75) 100%)' }}
+        />
+        <HeroContent onNavigate={onNavigate} />
+      </section>
+    </>
+  )
+}
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+function HeroContent({ onNavigate }) {
+  return (
+    <div className="section-shell-wide relative z-10 py-24 md:py-28 w-full">
+      {/* Badge */}
+      <motion.div
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="flex justify-center mb-8 md:mb-10"
+      >
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 px-4 py-2 rounded-full text-sm font-medium">
+          <Clock size={14} className="text-teal-300" /> Coming Summer 2026
+        </div>
+      </motion.div>
+
+      {/* Title */}
+      <motion.h1
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto max-w-4xl text-center text-4xl font-extrabold leading-[0.95] tracking-tight text-white mb-10 sm:text-5xl md:text-7xl lg:text-[5.5rem] md:mb-14"
+      >
+        The Loop Trilogy
+      </motion.h1>
+
+      {/* CTAs */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+      >
+        <button
+          onClick={() => onNavigate('about')}
+          className="w-full sm:w-[300px] inline-flex items-center justify-center gap-2 bg-teal-600/80 hover:bg-teal-600 backdrop-blur-sm border border-teal-400/40 text-white font-semibold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
         >
-          <button
-            onClick={() => onNavigate('about')}
-            className="w-full sm:w-[300px] inline-flex items-center justify-center gap-2 bg-teal-600/80 hover:bg-teal-600 backdrop-blur-sm border border-teal-400/40 text-white font-semibold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-          >
-            Discover the Author <ArrowRight size={18} />
-          </button>
-          <button
-            onClick={() => onNavigate('part-one')}
-            className="w-full sm:w-[300px] inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-          >
-            The Loop <ArrowRight size={18} />
-          </button>
-        </motion.div>
-      </div>
+          Discover the Author <ArrowRight size={18} />
+        </button>
+        <button
+          onClick={() => onNavigate('part-one')}
+          className="w-full sm:w-[300px] inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+        >
+          The Loop <ArrowRight size={18} />
+        </button>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
@@ -85,7 +110,7 @@ function Hero({ onNavigate }) {
           <div className="w-1.5 h-2.5 bg-white/50 rounded-full" />
         </motion.div>
       </motion.div>
-    </section>
+    </div>
   )
 }
 
