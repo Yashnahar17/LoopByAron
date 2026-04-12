@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { AtSign, Instagram, Mail, Quote } from 'lucide-react'
-import aronImg from "../assets/images/aron.jpg"
+import aron from "../assets/images/aron.jpg"
 import FadeIn from '../components/FadeIn'
 import Footer from '../components/Footer'
 
