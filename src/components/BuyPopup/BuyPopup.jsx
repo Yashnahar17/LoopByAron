@@ -10,7 +10,16 @@ const platforms = [
     links: {
       audiobook: '#amazon-audiobook',
       ebook: '#amazon-ebook',
-      hardcopy: '#amazon-hardcopy'
+      hardcopy: 'https://tr.ee/OSIjSw_AS2'
+    }
+  },
+  {
+    name: 'Amazon (Paperback)',
+    audiobook: null,
+    ebook: null,
+    hardcopy: 'Buy',
+    links: {
+      hardcopy: 'https://tr.ee/EGGFgrrDNB'
     }
   },
   {
@@ -28,7 +37,7 @@ const platforms = [
     links: {
       audiobook: '#flipkart-audiobook',
       ebook: '#flipkart-ebook',
-      hardcopy: '#flipkart-hardcopy'
+      hardcopy: 'https://tr.ee/1ZmQrRzCI-'
     }
   },
   {
@@ -60,7 +69,7 @@ const platforms = [
     hardcopy: 'Buy',
     links: {
       audiobook: '#kindle-audiobook',
-      ebook: '#kindle-ebook',
+      ebook: 'https://tr.ee/3cVyVZbnjB',
       hardcopy: '#kindle-hardcopy'
     }
   },
